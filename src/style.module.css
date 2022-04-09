@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400);
+.rnb {
+  display: table;
+  margin: 0 auto;
+  font-family: "Roboto Slab";
+  font-weight: 600;
+  font-size: 5em;
+  background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 200px;
+}
