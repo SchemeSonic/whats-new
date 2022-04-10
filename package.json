@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/react-npm-starter.esm.js",
+  "module": "dist/whats-new.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -35,15 +35,17 @@
   },
   "size-limit": [
     {
-      "path": "dist/react-npm-starter.cjs.production.min.js",
+      "path": "dist/whats-new.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-npm-starter.esm.js",
+      "path": "dist/whats-new.esm.js",
       "limit": "10 KB"
     }
   ],
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3"
   },
   "peerDependencies": {
     "react": ">=16",
