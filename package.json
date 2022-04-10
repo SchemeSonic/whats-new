@@ -1,7 +1,10 @@
 {
-  "version": "0.1.2",
+  "name": "@schemesonic/whats-new",
+  "author": "SchemeSonic",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/react-npm-starter.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -19,9 +22,6 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "peerDependencies": {
-    "react": ">=16"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -33,9 +33,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@schemesonic/react-npm-starter",
-  "author": "SchemeSonic",
-  "module": "dist/react-npm-starter.esm.js",
   "size-limit": [
     {
       "path": "dist/react-npm-starter.cjs.production.min.js",
@@ -46,6 +43,13 @@
       "limit": "10 KB"
     }
   ],
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.3",
     "@types/react": "^17.0.37",
@@ -61,9 +65,5 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.5.3"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3"
   }
 }
