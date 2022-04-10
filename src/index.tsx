@@ -1,12 +1,4 @@
-import React from 'react';
-import styles from './style.module.css';
+import SidePanel from './components/SidePanel/SidePanel';
+import AnnouncementCard from './components/AnnouncementCard/AnnouncementCard';
 
-interface RnsProps {
-  title: string;
-}
-
-const Rns = ({ title }: RnsProps): JSX.Element => {
-  return <div className={styles.rns}>{title}</div>;
-};
-
-export default Rns;
+export { SidePanel, AnnouncementCard };
