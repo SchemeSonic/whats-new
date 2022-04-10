@@ -1,27 +1,46 @@
 import React from 'react';
-import { Chip, Paper, Typography } from '@material-ui/core';
+import { Button, Chip, Paper, Typography } from '@material-ui/core';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Announcement } from '../..';
 import styles from './AnnouncementCard.module.css';
+import { ChevronRightRounded } from '@material-ui/icons';
 
-const AnnouncementCard = () => {
+interface AnnouncementCardProps {
+  announcement: Announcement;
+}
+
+const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
   return (
-    <Paper className={styles.announcementCard}>
+    <Paper elevation={4} className={styles.announcementCard}>
       <div className={styles.header}>
-        <Typography className={styles.date} color="primary" variant="subtitle2">
-          12 Ekim 2022, v1.0.23
-        </Typography>
         <div className={styles.tags}>
-          <Chip
-            size="small"
-            color="primary"
-            label={Math.round(Math.random() * 10) % 3 ? 'New' : 'Improvement'}
-          />
+          {announcement.tags.map((tag, index) => (
+            <Chip key={index} size="small" color="primary" label={tag} />
+          ))}
         </div>
+        <Typography
+          className={styles.date}
+          color="textSecondary"
+          variant="caption"
+        >
+          {announcement.date}, {announcement.version}
+        </Typography>
+        <Typography className={styles.title} color="primary" variant="h6">
+          {announcement.title}
+        </Typography>
       </div>
       <div className={styles.body}>
-        Following the recent release of timeseries of click count, LogRocket now
-        supports timeseries of custom events.
+        <ReactMarkdown
+          children={announcement.overview}
+          remarkPlugins={[remarkGfm]}
+        />
       </div>
-      <div className={styles.footer}></div>
+      <div className={styles.footer}>
+        <Button size="small" color="primary" variant="text">
+          Güncelleme Detaylarını Gör <ChevronRightRounded />
+        </Button>
+      </div>
     </Paper>
   );
 };

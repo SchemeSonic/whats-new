@@ -24,9 +24,6 @@
 .body {
   flex: 1;
   padding: 10px;
-}
-
-.footer {
-  text-align: center;
-  font-family: monospace;
+  max-height: calc(100% - 48px);
+  overflow-y: auto;
 }

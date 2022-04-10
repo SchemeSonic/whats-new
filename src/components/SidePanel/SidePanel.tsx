@@ -8,7 +8,7 @@ interface SidePanelProps {
 }
 
 const SidePanel = forwardRef((props: SidePanelProps, ref) => {
-  const { open = true, anchor = 'right' } = props;
+  const { open = false, anchor = 'right' } = props;
   const [panelOpen, setPanelOpen] = useState(open);
 
   useImperativeHandle(ref, () => ({

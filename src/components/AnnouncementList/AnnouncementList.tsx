@@ -1,13 +1,16 @@
+import React, { useContext } from 'react';
 import { IconButton, Typography } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
-import React from 'react';
 import AnnouncementCard from '../AnnouncementCard/AnnouncementCard';
+import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import styles from './AnnouncementList.module.css';
 
 interface AnnouncementListProps {
   setPanelOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
+  const { announcements } = useContext(WhatsNewContext);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -19,11 +22,13 @@ const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
         </IconButton>
       </div>
       <div className={styles.body}>
-        {[1, 2, 3, 4].map(i => (
-          <AnnouncementCard key={i} />
+        {announcements.map(announcement => (
+          <AnnouncementCard
+            announcement={announcement}
+            key={announcement.date.toString()}
+          />
         ))}
       </div>
-      <div className={styles.footer}>Version 1.0.23</div>
     </div>
   );
 };

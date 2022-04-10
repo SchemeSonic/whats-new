@@ -2,21 +2,23 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import { useRef } from 'react';
 import * as ReactDOM from 'react-dom';
-import { SidePanel } from '../.';
+import { WhatsNew } from '../.';
 import { IconButton } from '@material-ui/core';
 import { NotificationsActive } from '@material-ui/icons';
+import { announcements } from './announcements';
 
 const App = () => {
-  const sidePanelRef = useRef<any>();
+  const WhatsNewRef = useRef<any>();
+
   return (
     <div>
       <IconButton
         color="secondary"
-        onClick={() => sidePanelRef.current?.toggle()}
+        onClick={() => WhatsNewRef.current?.togglePanel()}
       >
         <NotificationsActive />
       </IconButton>
-      <SidePanel ref={sidePanelRef} />
+      <WhatsNew announcements={announcements} ref={WhatsNewRef} />
     </div>
   );
 };

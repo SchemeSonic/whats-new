@@ -3,17 +3,44 @@
   flex-direction: column;
   margin-bottom: 10px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.header > .date {
+.header > .tags {
   flex: 1;
 }
 
-.body {
+.header > .date {
+  text-align: right;
+}
+
+.header > .title {
+  flex-basis: 100%;
   margin-top: 10px;
+}
+
+.body img {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+}
+
+.body p, .body li, .body ul {
+  font-size: 0.875rem;
+}
+
+.footer {
+  display: flex;
+}
+
+.footer > button {
+  text-transform: initial;
 }
