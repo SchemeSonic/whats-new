@@ -23,8 +23,9 @@
   bottom: -10px;
 }
 
-.body {
+:global(#rwn-modal) .body {
   background-color: #eee6;
+  padding-bottom: 20px;
 }
 
 .body h1,
@@ -35,6 +36,11 @@
 .body h6 {
   color: #4c555a;
   font-weight: 500;
+}
+
+.body u {
+  text-decoration-color: darksalmon;
+  text-decoration-thickness: 2px;
 }
 
 .body img {

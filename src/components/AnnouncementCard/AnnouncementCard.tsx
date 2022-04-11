@@ -3,6 +3,7 @@ import { Button, Chip, Paper, Typography } from '@material-ui/core';
 import { ChevronRightRounded } from '@material-ui/icons';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { Announcement } from '../..';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import { formatDate } from '../../utils';
@@ -16,9 +17,9 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
   const { setActiveAnnouncement } = useContext(WhatsNewContext);
 
   return (
-    <Paper elevation={4} className={styles.announcementCard}>
-      <div className={styles.header}>
-        <div className={styles.tags}>
+    <Paper id="rwn-card" elevation={4} className={styles.announcementCard}>
+      <div id="rwn-card-header" className={styles.header}>
+        <div id="rwn-card-header-tags" className={styles.tags}>
           {announcement.tags.map((tag, index) => (
             <Chip
               key={index}
@@ -32,6 +33,7 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
           ))}
         </div>
         <Typography
+          id="rwn-card-header-date"
           className={styles.date}
           color="textSecondary"
           variant="caption"
@@ -39,17 +41,23 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
           {formatDate(announcement.date)}
           {announcement.version ? `, ${announcement.version}` : ''}
         </Typography>
-        <Typography className={styles.title} color="primary" variant="h6">
+        <Typography
+          id="rwn-card-header-title"
+          className={styles.title}
+          color="primary"
+          variant="h6"
+        >
           {announcement.title}
         </Typography>
       </div>
-      <div className={styles.body}>
+      <div id="rwn-card-body" className={styles.body}>
         <ReactMarkdown
           children={announcement.overview}
           remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
         />
       </div>
-      <div className={styles.footer}>
+      <div id="rwn-card-footer" className={styles.footer}>
         {announcement.content && (
           <Button
             size="small"

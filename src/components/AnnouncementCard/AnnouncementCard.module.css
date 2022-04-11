@@ -47,6 +47,11 @@
   font-weight: 300;
 }
 
+.body u {
+  text-decoration-color: darksalmon;
+  text-decoration-thickness: 2px;
+}
+
 .body h1,
 .body h2,
 .body h3,

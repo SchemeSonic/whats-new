@@ -9,6 +9,7 @@ import { TransitionProps } from '@material-ui/core/transitions/transition';
 import React, { forwardRef, useContext, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { formatDate } from '../../utils';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import styles from './AnnouncementModal.module.css';
@@ -40,17 +41,23 @@ const AnnouncementModal = () => {
 
   return (
     <Dialog
-      id="announcement-modal"
+      id="rwn-modal"
       open={modalOpen}
       TransitionComponent={Transition}
       keepMounted
       onClose={handleClose}
     >
-      <div className={styles.header}>
-        <Typography className={styles.title} color="primary" variant="h6">
+      <div id="rwn-modal-header" className={styles.header}>
+        <Typography
+          id="rwn-modal-header-title"
+          className={styles.title}
+          color="primary"
+          variant="h6"
+        >
           {activeAnnouncement.title}
         </Typography>
         <Typography
+          id="rwn-modal-header-date"
           className={styles.date}
           color="textSecondary"
           variant="caption"
@@ -58,7 +65,7 @@ const AnnouncementModal = () => {
           {formatDate(activeAnnouncement.date)}
           {activeAnnouncement.version ? `, ${activeAnnouncement.version}` : ''}
         </Typography>
-        <div className={styles.tags}>
+        <div id="rwn-modal-header-tags" className={styles.tags}>
           {activeAnnouncement.tags.map((tag, index) => (
             <Chip
               key={index}
@@ -72,10 +79,11 @@ const AnnouncementModal = () => {
           ))}
         </div>
       </div>
-      <DialogContent className={styles.body}>
+      <DialogContent id="rwn-modal-body" className={styles.body}>
         <ReactMarkdown
           children={activeAnnouncement.content}
           remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
         />
       </DialogContent>
     </Dialog>
