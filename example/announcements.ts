@@ -1,7 +1,27 @@
+const TAG_SETTINGS = {
+  NEW_FEATURE: {
+    text: 'New Feature',
+    color: 'rgba(0, 0, 0, 0.87)',
+    backgroundColor: '#99d066',
+  },
+  IMPROVEMENT: {
+    text: 'Improvement',
+    color: '#fff',
+    backgroundColor: '#ed8c22',
+  },
+  ANNOUNCEMENT: {
+    text: 'Announcement',
+    color: 'rgba(0, 0, 0, 0.87)',
+    backgroundColor: '#5eb8ff',
+  },
+};
+
 export const announcements = [
   {
     title: 'TRAKAP Yeni Güncelleme Sistemi',
-    date: '11 Nisan 2022',
+    date: new Date(),
+    version: 'v1.0.0',
+    tags: [TAG_SETTINGS.NEW_FEATURE],
     overview: `
 Merhabalar,
 
@@ -38,7 +58,5 @@ Metis ile ilgili bütün haberlere ulaşabileceğiniz haberler modülü yayında
 *   Eklenen haber detaylarını inceleyip, beğenebilir ve yorum bırakabilirsiniz.
 
 `,
-    version: 'v1.0.0',
-    tags: ['new feature'],
   },
 ];
