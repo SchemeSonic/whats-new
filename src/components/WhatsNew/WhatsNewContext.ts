@@ -1,5 +1,6 @@
 import React from 'react';
 import { Announcement } from '../..';
+import translation from '../../translation';
 
 interface WhatsNewContextProps {
   activeAnnouncement?: Announcement;
@@ -7,8 +8,10 @@ interface WhatsNewContextProps {
     React.SetStateAction<Announcement | undefined>
   >;
   announcements: Announcement[];
+  translation: Record<string, string>;
 }
 
 export const WhatsNewContext = React.createContext<WhatsNewContextProps>({
   announcements: [],
+  translation,
 });

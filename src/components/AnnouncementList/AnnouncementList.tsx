@@ -8,13 +8,13 @@ interface AnnouncementListProps {
   setPanelOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
-  const { announcements } = useContext(WhatsNewContext);
+  const { announcements, translation } = useContext(WhatsNewContext);
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <Typography className={styles.title} variant="h6">
-          What's new in your app?
+          {translation['sidepanel.title']}
         </Typography>
         <IconButton color="inherit" onClick={() => setPanelOpen(false)}>
           ✕

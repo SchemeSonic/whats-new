@@ -13,7 +13,7 @@ interface AnnouncementCardProps {
 }
 
 const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
-  const { setActiveAnnouncement } = useContext(WhatsNewContext);
+  const { setActiveAnnouncement, translation } = useContext(WhatsNewContext);
 
   return (
     <Paper id="rwn-card" elevation={4} className={styles.announcementCard}>
@@ -64,7 +64,7 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
             variant="text"
             onClick={() => setActiveAnnouncement?.(announcement)}
           >
-            Güncelleme Detaylarını Gör ❯
+            {translation['announcement-card.details-button']}
           </Button>
         )}
       </div>
