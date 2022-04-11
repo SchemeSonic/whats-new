@@ -1,24 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Chip, Paper, Typography } from '@material-ui/core';
+import { ChevronRightRounded } from '@material-ui/icons';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Announcement } from '../..';
+import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
+import { formatDate } from '../../utils';
 import styles from './AnnouncementCard.module.css';
-import { ChevronRightRounded } from '@material-ui/icons';
 
 interface AnnouncementCardProps {
   announcement: Announcement;
 }
 
-const formatDate = (d: Date): string => {
-  const locale = navigator.language || 'en-US';
-  let year = new Intl.DateTimeFormat(locale, { year: 'numeric' }).format(d);
-  let month = new Intl.DateTimeFormat(locale, { month: 'long' }).format(d);
-  let day = new Intl.DateTimeFormat(locale, { day: '2-digit' }).format(d);
-  return `${day} ${month} ${year}`;
-};
-
 const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
+  const { setActiveAnnouncement } = useContext(WhatsNewContext);
+
   return (
     <Paper elevation={4} className={styles.announcementCard}>
       <div className={styles.header}>
@@ -55,7 +51,12 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
       </div>
       <div className={styles.footer}>
         {announcement.content && (
-          <Button size="small" color="primary" variant="text">
+          <Button
+            size="small"
+            color="primary"
+            variant="text"
+            onClick={() => setActiveAnnouncement?.(announcement)}
+          >
             Güncelleme Detaylarını Gör <ChevronRightRounded />
           </Button>
         )}

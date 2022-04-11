@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 16px 24px;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+  position: relative;
+}
+
+.header > .title {
+  flex: 1;
+}
+
+.header > .date {
+  text-align: right;
+}
+
+.header > .tags {
+  position: absolute;
+  right: 24px;
+  bottom: -10px;
+}
+
+.body {
+  background-color: #eee6;
+}
+
+.body h1,
+.body h2,
+.body h3,
+.body h4,
+.body h5,
+.body h6 {
+  color: #4c555a;
+  font-weight: 500;
+}
+
+.body img {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+}
+
+.body p,
+.body li,
+.body ul {
+  font-size: 0.875rem;
+  font-weight: 300;
+}

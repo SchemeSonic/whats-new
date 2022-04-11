@@ -1,6 +1,13 @@
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useState,
+} from 'react';
 import { Drawer } from '@material-ui/core';
 import AnnouncementList from '../AnnouncementList/AnnouncementList';
+import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 
 interface SidePanelProps {
   open?: boolean;
@@ -10,6 +17,13 @@ interface SidePanelProps {
 const SidePanel = forwardRef((props: SidePanelProps, ref) => {
   const { open = false, anchor = 'right' } = props;
   const [panelOpen, setPanelOpen] = useState(open);
+  const context = useContext(WhatsNewContext);
+
+  useEffect(() => {
+    if (context.activeAnnouncement) {
+      setPanelOpen(false);
+    }
+  }, [context]);
 
   useImperativeHandle(ref, () => ({
     open: () => setPanelOpen(true),
@@ -26,7 +40,7 @@ const SidePanel = forwardRef((props: SidePanelProps, ref) => {
       open={panelOpen}
       onClose={() => setPanelOpen(false)}
     >
-      <AnnouncementList setPanelOpen={setPanelOpen}/>
+      <AnnouncementList setPanelOpen={setPanelOpen} />
     </Drawer>
   );
 });
