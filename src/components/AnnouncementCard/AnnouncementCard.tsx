@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Button, Chip, Paper, Typography } from '@material-ui/core';
-import { ChevronRightRounded } from '@material-ui/icons';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -65,7 +64,7 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
             variant="text"
             onClick={() => setActiveAnnouncement?.(announcement)}
           >
-            Güncelleme Detaylarını Gör <ChevronRightRounded />
+            Güncelleme Detaylarını Gör ❯
           </Button>
         )}
       </div>

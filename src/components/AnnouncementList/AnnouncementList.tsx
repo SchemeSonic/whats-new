@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { IconButton, Typography } from '@material-ui/core';
-import { Close } from '@material-ui/icons';
 import AnnouncementCard from '../AnnouncementCard/AnnouncementCard';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import styles from './AnnouncementList.module.css';
@@ -18,7 +17,7 @@ const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
           What's new in your app?
         </Typography>
         <IconButton color="inherit" onClick={() => setPanelOpen(false)}>
-          <Close />
+          ✕
         </IconButton>
       </div>
       <div className={styles.body}>

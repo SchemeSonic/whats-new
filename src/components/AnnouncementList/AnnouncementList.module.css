@@ -9,7 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 48px;
+  min-height: 54px;
+  padding-right: 5px;
   padding-left: 20px;
   color: #fff;
   background-color: #3f51b5;
@@ -17,13 +18,18 @@
     0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
+.header > button > span:first-child {
+  height: 18px;
+}
+
 .header > .title {
   flex: 1;
+  font-weight: 400;
 }
 
 .body {
   flex: 1;
   padding: 10px;
-  max-height: calc(100% - 48px);
+  max-height: calc(100% - 54px);
   overflow-y: auto;
 }

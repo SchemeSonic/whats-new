@@ -2,9 +2,8 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import { useRef } from 'react';
 import * as ReactDOM from 'react-dom';
+import { Button } from '@material-ui/core';
 import { WhatsNew } from '../.';
-import { IconButton } from '@material-ui/core';
-import { NotificationsActive } from '@material-ui/icons';
 import { announcements } from './announcements';
 
 const App = () => {
@@ -12,12 +11,13 @@ const App = () => {
 
   return (
     <div>
-      <IconButton
-        color="secondary"
+      <Button
+        color="primary"
+        variant="outlined"
         onClick={() => WhatsNewRef.current?.togglePanel()}
       >
-        <NotificationsActive />
-      </IconButton>
+        Show Announcements
+      </Button>
       <WhatsNew announcements={announcements} ref={WhatsNewRef} />
     </div>
   );
