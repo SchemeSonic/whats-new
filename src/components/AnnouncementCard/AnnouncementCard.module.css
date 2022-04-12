@@ -33,8 +33,11 @@
 }
 
 .body img {
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: auto;
   max-width: 600px;
+  max-height: 50vh;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 0 4px rgb(0 0 0 / 10%);

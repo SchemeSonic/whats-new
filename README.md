@@ -1,19 +1,20 @@
 # What's New component for react
 
-> Show new features 
+> Show new features
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/paraboly/react-apexcharts-dynamic-config/graphs/commit-activity)
 [![NPM](https://img.shields.io/npm/v/@paraboly/react-apexcharts-dynamic-config.svg)](https://www.npmjs.com/package/@schemesonic/whats-new) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed06153b-5f15-4305-b897-22ed648b95ae/deploy-status)](https://app.netlify.com/sites/react-whats-new/deploys)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-
-| Example 1                                                                                                                 |                                                         Example 2                                                         |                                                         Example 3                                                         |
-| ------------------------------------------------------------------------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
-| ![alt text](https://raw.githubusercontent.com/Paraboly/react-apexcharts-dynamic-config/main/example/assets/example_1.png) | ![alt text](https://raw.githubusercontent.com/Paraboly/react-apexcharts-dynamic-config/main/example/assets/example_2.png) | ![alt text](https://raw.githubusercontent.com/Paraboly/react-apexcharts-dynamic-config/main/example/assets/example_3.png) |
-
 ## Demo
 
-> https://react-apexcharts-dynamic-config.netlify.app
+| Announcements                                                                |                              Announcement Details                               |
+| ---------------------------------------------------------------------------- | :-----------------------------------------------------------------------------: |
+| <img src="./img/sidepanel.png" alt="Announcements" style="max-height: 500px"> | <img src="./img/modal.png" alt="Announcement Details" style="max-height: 500px"> |
+
+> https://react-whats-new.netlify.app
+
+---
 
 ## Install
 
@@ -21,33 +22,18 @@
 npm install --save @paraboly/react-apexcharts-dynamic-config
 ```
 
+---
+
 ## Usage
 
 ```tsx
 import React from 'react';
-import ReactApexDynamicConfig from '@paraboly/react-apexcharts-dynamic-config';
+import ReactNpmStarter from '@schemesonic/react-npm-starter';
 
-const example = (): React.ReactElement => {
-  //ApexCharts.ApexOptions
-  const options = {
-    chart: {
-      type: 'pie',
-    },
-    title: {
-      text: 'Chart Title',
-    },
-    labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-    legend: {
-      position: 'bottom',
-    },
-  };
+const example = (): JSX.Element => {
+  const options = { someProps: [] };
 
-  return (
-    <ReactApexDynamicConfig
-      options={options}
-      onChange={(opt) => console.log(opt)}
-    />
-  );
+  return <ReactNpmStarter prop={options} onChange={opt => console.log(opt)} />;
 };
 
 export default example;
@@ -55,37 +41,13 @@ export default example;
 
 ## Details
 
-| Props        |          Definition          |                                           Type |              Default | Required |
-| ------------ | :--------------------------: | ---------------------------------------------: | -------------------: | -------: |
-| options      |  Initial apex chart options  |                       `ApexCharts.ApexOptions` |                 null |     true |
-| translations | Translations key value pair  |                       `Record<string, string>` | DEFAULT_TRANSLATIONS |    false |
-| onChange     | Callback for updated options | `(updatedOpt: ApexCharts.ApexOptions) => void` |                 null |     true |
+| Props    |        Definition         |                         Type | Default | Required |
+| -------- | :-----------------------: | ---------------------------: | ------: | -------: |
+| prop     |       Example prop        |                       `Prop` |    null |     true |
+| onChange | Example callback function | `(updatedOpt: Prop) => void` |    null |     true |
 
-DEFAULT_TRANSLATIONS
+---
 
-```json
-{
-  "reset": "Reset",
-  "show": "Show",
-  "hide": "Hide",
-  "none": "None",
-  "number": "Number",
-  "percent": "Percent",
-  "all": "All",
-  "top": "Top",
-  "right": "Right",
-  "bottom": "Bottom",
-  "left": "Left",
-  "xaxis": "X-Axis",
-  "yaxis": "Y-Axis",
-  "legendPosition": "Legend Position",
-  "titleVisibility": "Title Visibility",
-  "fontSize": "FontSize",
-  "axisLabelSize": "Axis Label Size",
-  "dataLabels": "Data Labels"
-}
-```
+## Licence
 
-## License
-
-MIT © [SchemeSonic](https://github.com/SchemeSonic)
+[MIT](./LICENSE) License © [SchemeSonic](https://github.com/jaredpalmer/tsdx)
