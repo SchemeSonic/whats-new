@@ -3,7 +3,7 @@
 > Show new features 
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/paraboly/react-apexcharts-dynamic-config/graphs/commit-activity)
-[![NPM](https://img.shields.io/npm/v/@paraboly/react-apexcharts-dynamic-config.svg)](https://www.npmjs.com/package/@schemesonice/whats-new) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed06153b-5f15-4305-b897-22ed648b95ae/deploy-status)](https://app.netlify.com/sites/react-whats-new/deploys)
+[![NPM](https://img.shields.io/npm/v/@paraboly/react-apexcharts-dynamic-config.svg)](https://www.npmjs.com/package/@schemesonic/whats-new) [![Netlify Status](https://api.netlify.com/api/v1/badges/ed06153b-5f15-4305-b897-22ed648b95ae/deploy-status)](https://app.netlify.com/sites/react-whats-new/deploys)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 
