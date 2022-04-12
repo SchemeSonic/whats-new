@@ -19,7 +19,7 @@ const TAG_SETTINGS = {
 export const announcements = [
   {
     title: "NEW ABILITY WORD: COVEN",
-    date: new Date(),
+    date: new Date("2022-04-09"),
     version: 'v1.1.0',
     tags: [TAG_SETTINGS.NEW_FEATURE],
     overview: `
@@ -41,7 +41,7 @@ Coven is an ability word found on cards with abilities that care about controlli
   },
   {
     title: 'RETURNING KEYWORD ABILITY: FLASHBACK',
-    date: new Date(),
+    date: new Date("2022-03-21"),
     tags: [TAG_SETTINGS.IMPROVEMENT],
     overview: `
 Flashback is a returning mechanic that gives cards a second chance to have an impact.

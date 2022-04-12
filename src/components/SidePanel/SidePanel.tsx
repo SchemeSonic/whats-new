@@ -8,6 +8,7 @@ import React, {
 import { Drawer } from '@material-ui/core';
 import AnnouncementList from '../AnnouncementList/AnnouncementList';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
+import WhatsNewService from '../../services/WhatsNewService';
 
 interface SidePanelProps {
   open?: boolean;
@@ -26,11 +27,14 @@ const SidePanel = forwardRef((props: SidePanelProps, ref) => {
   }, [context]);
 
   useImperativeHandle(ref, () => ({
-    open: () => setPanelOpen(true),
+    open: () => {
+      setPanelOpen(true);
+      WhatsNewService.setLastReadDate();
+    },
     close: () => setPanelOpen(false),
     toggle() {
-      console.log('toggle');
       setPanelOpen(!panelOpen);
+      WhatsNewService.setLastReadDate();
     },
   }));
 

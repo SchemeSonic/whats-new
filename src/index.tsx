@@ -1,4 +1,5 @@
 import WhatsNew from './components/WhatsNew/WhatsNew';
+import WhatsNewService from './services/WhatsNewService';
 import SidePanel from './components/SidePanel/SidePanel';
 import AnnouncementCard from './components/AnnouncementCard/AnnouncementCard';
 
@@ -12,8 +13,8 @@ interface Announcement {
     overview: string;
     content: string;
     date: Date;
-    version: string;
+    version?: string;
     tags: Tag[];
 }
 
-export { WhatsNew, SidePanel, AnnouncementCard, Announcement };
+export { WhatsNew, WhatsNewService, SidePanel, AnnouncementCard, Announcement };
