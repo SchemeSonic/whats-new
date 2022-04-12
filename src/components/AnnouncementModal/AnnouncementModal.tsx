@@ -27,7 +27,7 @@ const AnnouncementModal = () => {
   const activeAnnouncement = context.activeAnnouncement;
 
   useEffect(() => {
-    if (activeAnnouncement) {
+    if (context.activeAnnouncement) {
       setModalOpen(true);
     }
   }, [context]);

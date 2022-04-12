@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Rns from '../src';
+import { WhatsNew } from '../src';
 
 describe('it', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Rns title="Hello react-npm-starter(Rns)" />, div);
+    ReactDOM.render(<WhatsNew announcements={[]} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
