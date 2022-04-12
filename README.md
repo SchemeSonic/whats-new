@@ -19,7 +19,7 @@
 ## Install
 
 ```bash
-npm install --save @paraboly/react-apexcharts-dynamic-config
+npm install --save @schemesonic/whats-new
 ```
 
 ---
@@ -27,16 +27,54 @@ npm install --save @paraboly/react-apexcharts-dynamic-config
 ## Usage
 
 ```tsx
-import React from 'react';
-import ReactNpmStarter from '@schemesonic/react-npm-starter';
+import React, { useRef } from 'react';
+import { Badge, Button } from '@material-ui/core';
+import { WhatsNew, WhatsNewService } from '@schemesonic/whats-new';
 
-const example = (): JSX.Element => {
-  const options = { someProps: [] };
+const WhatsNewExample = (): JSX.Element => {
+  const WhatsNewRef = useRef<any>();
+  const [unreadCount, setUnreadCount] = React.useState(
+    WhatsNewService.getUnreadCount(announcements)
+  );
+  const announcements = [
+    {
+      title: "NEW ABILITY WORD: COVEN",
+      date: new Date("2022-04-09"),
+      version: 'v1.1.0',
+      tags: [{
+        text: 'New Feature',
+        color: 'rgba(0, 0, 0, 0.87)',
+        backgroundColor: '#99d066',
+      }],
+      overview: `### This is overview`,
+      content: `### This is content`
+    }
+  ];
 
-  return <ReactNpmStarter prop={options} onChange={opt => console.log(opt)} />;
+  return <div>
+    <Badge badgeContent={unreadCount} color="secondary" overlap="rectangular">
+      <Button
+        color="primary"
+        variant="outlined"
+        onClick={() => {
+          WhatsNewRef.current?.togglePanel();
+          setUnreadCount(WhatsNewService.getUnreadCount(announcements));
+        }}
+      >
+        Show Announcements
+      </Button>
+    </Badge>
+    <WhatsNew
+      announcements={announcements}
+      translation={{
+        'sidepanel.title': "What's new in Magic: The Gathering?",
+      }}
+      ref={WhatsNewRef}
+    />
+  </div>;
 };
 
-export default example;
+export default WhatsNewExample;
 ```
 
 ## Details
