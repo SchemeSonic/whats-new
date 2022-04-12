@@ -18,7 +18,13 @@ const App = () => {
       >
         Show Announcements
       </Button>
-      <WhatsNew announcements={announcements} ref={WhatsNewRef} />
+      <WhatsNew
+        announcements={announcements}
+        translation={{
+          'sidepanel.title': "What's new in Magic: The Gathering?",
+        }}
+        ref={WhatsNewRef}
+      />
     </div>
   );
 };

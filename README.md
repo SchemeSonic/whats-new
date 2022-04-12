@@ -1,4 +1,4 @@
-# React What's New component
+# React What's New Component
 
 > React npm package starter with typescript and rollup.
 

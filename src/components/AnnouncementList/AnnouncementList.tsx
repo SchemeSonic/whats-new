@@ -11,16 +11,24 @@ const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
   const { announcements, translation } = useContext(WhatsNewContext);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <Typography className={styles.title} variant="h6">
+    <div id="rwn-list" className={styles.container}>
+      <div id="rwn-list-header" className={styles.header}>
+        <Typography
+          id="rwn-list-header-title"
+          className={styles.title}
+          variant="h6"
+        >
           {translation['sidepanel.title']}
         </Typography>
-        <IconButton color="inherit" onClick={() => setPanelOpen(false)}>
+        <IconButton
+          id="rwn-list-header-btn"
+          color="inherit"
+          onClick={() => setPanelOpen(false)}
+        >
           ✕
         </IconButton>
       </div>
-      <div className={styles.body}>
+      <div id="rwn-list-body" className={styles.body}>
         {announcements.map(announcement => (
           <AnnouncementCard
             announcement={announcement}

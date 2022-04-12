@@ -18,44 +18,51 @@ const TAG_SETTINGS = {
 
 export const announcements = [
   {
-    title: 'TRAKAP Yeni Güncelleme Sistemi',
+    title: "NEW ABILITY WORD: COVEN",
     date: new Date(),
-    version: 'v1.0.0',
+    version: 'v1.1.0',
     tags: [TAG_SETTINGS.NEW_FEATURE],
     overview: `
-Merhabalar,
+Coven is an ability word found on cards with abilities that care about controlling three or more creatures with different powers.
 
-6 aydır yoğun bir şekilde çalıştığımız METIS Versiyon 2 güncellemesi birçok yeni özellik ve iyileştirmeyle kullanıma hazır. Yeni versiyonumuzla bu yazın çok verimli geçeceğine inanıyoruz.
-
-![](https://app.getbeamer.com/pictures?id=206319-OO-_vWhjYe-_vUkpYifvv73vv70vT--_ve-_ve-_ve-_vWom77-977-9X--_ve-_vQNK77-9YlpI77-9)`,
+![](https://media.wizards.com/2021/mid/en_fAN7wGpmjW.png)`,
     content: `
-Merhabalar,
+Coven is an ability word found on cards with abilities that care about controlling three or more creatures with different powers.
 
-6 aydır yoğun bir şekilde çalıştığımız METIS Versiyon 2 güncellemesi birçok yeni özellik ve iyileştirmeyle kullanıma hazır. Yeni versiyonumuzla bu yazın çok verimli geçeceğine inanıyoruz.
+![](https://media.wizards.com/2021/mid/en_fAN7wGpmjW.png)
 
-![](https://app.getbeamer.com/pictures?id=206319-OO-_vWhjYe-_vUkpYifvv73vv70vT--_ve-_ve-_ve-_vWom77-977-9X--_ve-_vQNK77-9YlpI77-9)
+* A creature has different power from another if their powers are different numbers. For example, a 1/1 creature and a 2/1 creature have different powers.
 
-# Yeni Modüller
+* For three creatures to have different powers from one another, each of their powers needs to be different. A 1/1 creature, a 2/1 creature, and another 2/1 creature aren't three creatures with different powers, even though both 2/1 creatures have different power than the 1/1 creature.
 
-Metis v2 güncellemesi ile birlikte Bildirim ve Haberler modülleri sisteme eklendi.
+* Many coven abilities, such as that of Dawnhart Wardens above, are triggered abilities with intervening if clauses. You must control three or more creatures with different powers at the time the ability triggers and at the time the ability tries to resolve. They do not, however, need to be the same set of creatures in both cases.
 
-### Bildirim
+`,
+  },
+  {
+    title: 'RETURNING KEYWORD ABILITY: FLASHBACK',
+    date: new Date(),
+    tags: [TAG_SETTINGS.IMPROVEMENT],
+    overview: `
+Flashback is a returning mechanic that gives cards a second chance to have an impact.
 
-Metis platformunda takip etmeniz gereken her şeyden çok daha kolay haberdar olabilmenizi sağlayacak _Bildirim_ modülümüz Metis v2 ile hazır.
+![](https://media.wizards.com/2021/mid/en_6w9rKEzW2C.png)`,
+    content: `
+Flashback is a returning mechanic that gives cards a second chance to have an impact.
 
-*   Uygulama bazlı sekme özelliği ile bildirimler rahatlıkla fark edilebilecek.
-*   Bildirimleri okumaktan daha fazlasını yapabileceksiniz. Bildirime özel aksiyon alma özelliği ile tasarlanan yeni modülümüz önümüzdeki günlerde okumanın yanı sıra bildirimlerle ilgili kolay aksiyon alabilme özelliklerini de sunacak.
-*   Yeni bildirim sistemi ile birlikte ana haritanın sağında bulunan bildirim paneli kaldırıldı. Bildirim modülüne ilk kez yeni versiyon modülü entegre edildi ve Metis v2 ile birlikte artık her güncelleme sonrası bildirim yayınlanarak güncelleme içerikleri paylaşılacak.
-*   Kademeli şekilde Metis sistemindeki bütün bildirimler yeni bildirim modülüne taşınacaktır
+![](https://media.wizards.com/2021/mid/en_6w9rKEzW2C.png)
 
-![](https://miro.medium.com/max/1400/1*D9coiyG5R0IciHGBLm7v3g.png)
+* "Flashback [cost]" means "You may cast this card from your graveyard by paying [cost] rather than paying its mana cost" and "If the flashback cost was paid, exile this card instead of putting it anywhere else any time it would leave the stack."
 
-### Haberler
+* You must still follow any timing restrictions and permissions, including those based on the card's type. For instance, you can cast a sorcery using flashback only when you could normally cast a sorcery.
 
-Metis ile ilgili bütün haberlere ulaşabileceğiniz haberler modülü yayında.İlk etapta _VersiyonNotlarının_ paylaşılacağı haberler modülüne önümüzdeki güncellemelerde Metis kilometre taşları, bilgilendirici blog yazıları ve şehrin aylık iyileşmelerini gösteren çeşitli paylaşımlar eklenecek.
+* To determine the total cost of a spell, start with the mana cost or alternative cost (such as a flashback cost) you're paying, add any cost increases, then apply any cost reductions. The mana value of the spell is determined only by its mana cost, no matter what the total cost to cast the spell was.
 
-*   Sol navigasyon menüsüne eklenmiştir.
-*   Eklenen haber detaylarını inceleyip, beğenebilir ve yorum bırakabilirsiniz.
+* A spell cast using flashback will always be exiled afterward, whether it resolves, is countered, or leaves the stack in some other way.
+
+* You can cast a spell using flashback even if it was somehow put into your graveyard without having been cast.
+
+* If a card with flashback is put into your graveyard during your turn, you can cast it if it's legal to do so before any other player can take any actions.
 
 `,
   },
