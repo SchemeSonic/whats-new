@@ -10,7 +10,7 @@
 
 | Announcements                                                                |                              Announcement Details                               |
 | ---------------------------------------------------------------------------- | :-----------------------------------------------------------------------------: |
-| <img src="./img/sidepanel.png" alt="Announcements" style="max-height: 500px"> | <img src="./img/modal.png" alt="Announcement Details" style="max-height: 500px"> |
+| <img src="https://raw.githubusercontent.com/SchemeSonic/whats-new/main/img/sidepanel.png" alt="Announcements" style="max-height: 500px"> | <img src="https://raw.githubusercontent.com/SchemeSonic/whats-new/main/img/modal.png" alt="Announcement Details" style="max-height: 500px"> |
 
 > https://react-whats-new.netlify.app
 
