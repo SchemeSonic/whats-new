@@ -21,7 +21,7 @@ export const announcements = [
     title: "NEW ABILITY WORD: COVEN",
     date: new Date("2022-04-09"),
     version: 'v1.1.0',
-    tags: [TAG_SETTINGS.NEW_FEATURE],
+    tags: [TAG_SETTINGS.ANNOUNCEMENT, TAG_SETTINGS.NEW_FEATURE],
     overview: `
 Coven is an ability word found on cards with abilities that care about controlling three or more creatures with different powers.
 
