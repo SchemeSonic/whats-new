@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Button, Chip, Paper, Typography } from '@material-ui/core';
+import { useContext } from 'react';
+import { Button, Chip, Paper, Typography } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -34,7 +34,7 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
         <Typography
           id="rwn-card-header-date"
           className={styles.date}
-          color="textSecondary"
+          color="text.secondary"
           variant="caption"
         >
           {formatDate(announcement.date)}
@@ -50,11 +50,9 @@ const AnnouncementCard = ({ announcement }: AnnouncementCardProps) => {
         </Typography>
       </div>
       <div id="rwn-card-body" className={styles.body}>
-        <ReactMarkdown
-          children={announcement.overview}
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw]}
-        />
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          {announcement.overview}
+        </ReactMarkdown>
       </div>
       <div id="rwn-card-footer" className={styles.footer}>
         {announcement.content && (

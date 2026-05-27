@@ -6,7 +6,7 @@ abstract class WhatsNewService {
     const lastReadDate = this.getLastReadDate();
 
     const count = lastReadDate
-      ? announcements.filter(announcement => {
+      ? announcements.filter((announcement) => {
           return announcement.date > lastReadDate;
         }).length
       : announcements.length;

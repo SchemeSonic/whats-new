@@ -23,7 +23,7 @@
   bottom: -10px;
 }
 
-.header > .tags > div:not(last-child){
+.header > .tags > div:not(last-child) {
   margin-right: 10px;
 }
 

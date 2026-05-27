@@ -1,14 +1,12 @@
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
-import { useRef } from 'react';
-import * as ReactDOM from 'react-dom';
-import { Badge, Button } from '@material-ui/core';
-import { WhatsNew, WhatsNewService } from '../.';
+import { createRoot } from 'react-dom/client';
+import { useRef, useState } from 'react';
+import { Badge, Button } from '@mui/material';
+import { WhatsNew, WhatsNewService } from '../src';
 import { announcements } from './announcements';
 
 const App = () => {
   const WhatsNewRef = useRef<any>();
-  const [unreadCount, setUnreadCount] = React.useState(
+  const [unreadCount, setUnreadCount] = useState(
     WhatsNewService.getUnreadCount(announcements)
   );
 
@@ -46,4 +44,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+createRoot(document.getElementById('root')!).render(<App />);

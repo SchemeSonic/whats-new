@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { IconButton, Typography } from '@material-ui/core';
+import { useContext } from 'react';
+import { IconButton, Typography } from '@mui/material';
 import AnnouncementCard from '../AnnouncementCard/AnnouncementCard';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import styles from './AnnouncementList.module.css';
@@ -7,6 +7,7 @@ import styles from './AnnouncementList.module.css';
 interface AnnouncementListProps {
   setPanelOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
 const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
   const { announcements, translation } = useContext(WhatsNewContext);
 
@@ -29,7 +30,7 @@ const AnnouncementList = ({ setPanelOpen }: AnnouncementListProps) => {
         </IconButton>
       </div>
       <div id="rwn-list-body" className={styles.body}>
-        {announcements.map(announcement => (
+        {announcements.map((announcement) => (
           <AnnouncementCard
             announcement={announcement}
             key={announcement.date.toString()}

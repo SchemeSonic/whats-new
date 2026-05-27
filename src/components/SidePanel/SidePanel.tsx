@@ -1,11 +1,11 @@
-import React, {
+import {
   forwardRef,
   useContext,
   useEffect,
   useImperativeHandle,
   useState,
 } from 'react';
-import { Drawer } from '@material-ui/core';
+import { Drawer } from '@mui/material';
 import AnnouncementList from '../AnnouncementList/AnnouncementList';
 import { WhatsNewContext } from '../WhatsNew/WhatsNewContext';
 import WhatsNewService from '../../services/WhatsNewService';
@@ -15,7 +15,7 @@ interface SidePanelProps {
   anchor?: 'left' | 'top' | 'right' | 'bottom';
 }
 
-const SidePanel = forwardRef((props: SidePanelProps, ref) => {
+const SidePanel = forwardRef(function SidePanel(props: SidePanelProps, ref) {
   const { open = false, anchor = 'right' } = props;
   const [panelOpen, setPanelOpen] = useState(open);
   const context = useContext(WhatsNewContext);

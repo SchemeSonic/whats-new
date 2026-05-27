@@ -1,17 +1,15 @@
-import React from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 import { Announcement } from '../..';
 import translation from '../../translation';
 
 interface WhatsNewContextProps {
   activeAnnouncement?: Announcement;
-  setActiveAnnouncement?: React.Dispatch<
-    React.SetStateAction<Announcement | undefined>
-  >;
+  setActiveAnnouncement?: Dispatch<SetStateAction<Announcement | undefined>>;
   announcements: Announcement[];
   translation: Record<string, string>;
 }
 
-export const WhatsNewContext = React.createContext<WhatsNewContextProps>({
+export const WhatsNewContext = createContext<WhatsNewContextProps>({
   announcements: [],
   translation,
 });
