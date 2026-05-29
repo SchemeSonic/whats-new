@@ -33,7 +33,7 @@ const SidePanel = forwardRef(function SidePanel(props: SidePanelProps, ref) {
     },
     close: () => setPanelOpen(false),
     toggle() {
-      setPanelOpen(!panelOpen);
+      setPanelOpen((prev) => !prev);
       WhatsNewService.setLastReadDate();
     },
   }));

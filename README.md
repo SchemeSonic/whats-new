@@ -103,6 +103,74 @@ const App = () => {
 
 ---
 
+## Markdown File Support
+
+Announcements can be written as `.md` files with YAML frontmatter and parsed at build time using `parseAnnouncement` / `parseAnnouncements`. Both approaches can be mixed freely — the `WhatsNew` component always receives a plain `Announcement[]` regardless of how the data was created.
+
+### Markdown format
+
+```md
+---
+title: New Feature: Dark Mode
+date: 2024-06-01
+version: v2.0.0
+tags:
+  - text: New Feature
+    color: rgba(0,0,0,0.87)
+    backgroundColor: '#99d066'
+  - text: Improvement
+    color: '#fff'
+    backgroundColor: '#ed8c22'
+---
+
+Short overview shown in the announcement list. Supports **markdown**.
+
+<!-- more -->
+
+## Full Details
+
+Complete content shown in the detail modal.
+Also supports **markdown** including images, tables, etc.
+```
+
+The `<!-- more -->` separator divides `overview` (shown in the list card) from `content` (shown in the detail modal). If omitted, the entire body becomes the overview and the "Show details" button will not appear.
+
+### Parsing with Vite
+
+Import `.md` files as raw strings using the `?raw` suffix, then parse them:
+
+```ts
+import darkModeMd from './announcements/dark-mode.md?raw';
+import fixMd from './announcements/quick-fix.md?raw';
+import { parseAnnouncement, parseAnnouncements } from '@schemesonic/whats-new';
+
+// Parse individually
+const darkMode = parseAnnouncement(darkModeMd);
+
+// Or parse a batch
+const announcements = parseAnnouncements([darkModeMd, fixMd]);
+```
+
+### Mixing inline and file-based announcements
+
+```ts
+import v2Md from './announcements/v2.md?raw';
+import { parseAnnouncement } from '@schemesonic/whats-new';
+
+const announcements = [
+  parseAnnouncement(v2Md),       // from .md file
+  {                               // inline object
+    title: 'Quick fix',
+    date: new Date('2024-07-01'),
+    overview: 'Fixed a minor issue.',
+    content: '',
+    tags: [{ text: 'Fix', backgroundColor: '#f44336', color: '#fff' }],
+  },
+];
+```
+
+---
+
 ## API
 
 ### `<WhatsNew />`
@@ -143,6 +211,16 @@ whatsNewRef.current.togglePanel() // Toggle the side panel + mark as read
 | `text` | `string` | ✓ | Tag label |
 | `color` | `string` | | Text color (any CSS color value) |
 | `backgroundColor` | `string` | | Background color (any CSS color value) |
+
+---
+
+### `parseAnnouncement(md: string): Announcement`
+
+Parses a single markdown string with YAML frontmatter into an `Announcement` object. Throws if required fields (`title`, `date`) are missing or if the frontmatter delimiters are absent.
+
+### `parseAnnouncements(mds: string[]): Announcement[]`
+
+Parses an array of markdown strings. Returns announcements in the same order as the input.
 
 ---
 

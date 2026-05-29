@@ -2,7 +2,7 @@
   "name": "@schemesonic/whats-new",
   "type": "module",
   "author": "SchemeSonic",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "license": "MIT",
   "main": "dist/whats-new.umd.cjs",
   "module": "dist/whats-new.js",
@@ -12,7 +12,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/whats-new.js",
       "require": "./dist/whats-new.umd.cjs"
-    }
+    },
+    "./dist/whats-new.css": "./dist/whats-new.css"
   },
   "files": [
     "dist",
